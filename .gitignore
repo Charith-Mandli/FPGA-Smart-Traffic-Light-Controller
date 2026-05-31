@@ -1,4 +1,4 @@
-# Vivado Generated Files
+# Vivado Project Files
 
 *.jou
 *.log
@@ -6,12 +6,18 @@
 *.tmp
 *.backup
 *.wdb
+*.xdc.backup
+*.cache
+*.hw
+*.runs
+*.xpr
+*.tcl
 
 # Simulation Files
 
 *.vvp
 
-# Cache and Build Directories
+# Vivado Generated Folders
 
 .Xil/
 cache/
@@ -22,3 +28,4 @@ sim/
 
 .DS_Store
 Thumbs.db
+
