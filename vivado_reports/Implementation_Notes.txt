@@ -1,0 +1,52 @@
+# IMPLEMENTATION NOTES
+
+FPGA Toolchain:
+
+* Xilinx Vivado 2024.x
+
+Target FPGA:
+
+* Artix-7 FPGA
+
+Implementation Flow Completed:
+
+1. Behavioral Simulation
+2. Synthesis
+3. Design Implementation
+4. Routing
+5. Timing Verification
+6. Bitstream Generation
+
+---
+
+## CONSTRAINTS APPLIED
+
+* Pin LOC constraints assigned
+* IOSTANDARD constraints assigned
+* Clock timing constraints applied
+* CONFIG_VOLTAGE configured
+* CFGBVS property configured
+
+---
+
+## IMPLEMENTATION STATUS
+
+* Synthesis Successful
+* Implementation Successful
+* Routing Successful
+* Timing Constraints Met
+* Bitstream Generated Successfully
+
+---
+
+## NOTES
+
+The design was verified through both:
+
+* Functional simulation
+* FPGA implementation flow
+
+The project is implementation-ready and can be
+mapped to physical FPGA hardware.
+
+=====================================================

@@ -1,0 +1,76 @@
+—----------------------------------------------------------------------------------------------------------
+START
+  ↓
+Initialize System, Reset All Registers and FSM States
+  ↓
+Set Initial State = ALL_RED_2 , Enable Timer Counter
+  ↓
+Check Night Mode?
+  ├────────────────────────────────── Yes → Enter NIGHT_MODE_HIGH,  Blink Lights ON
+  No             						  ↓
+   ↓       						     Timer Expired?
+  MAIN_GREEN           				 	       	  ↓
+  ↓        						     NIGHT_MODE_LOW, Blink Lights OFF
+ Main Road = GREEN, Side Road = RED             		  ↓
+  ↓         						     Night Mode Disabled?
+ Timer Expired?            					  ↓
+     ├── No → Stay in MAIN_GREEN        		             Return to Previous State
+     └── Yes → MAIN_YELLOW
+                    ↓
+             Main Road = YELLOW,  Side Road = RED
+                    ↓
+             Timer Expired?
+                    ↓
+                ALL_RED_1, All Roads = RED
+                    ↓
+           Emergency Request?
+              ├── Yes → EMERGENCY
+              └── No
+                    ↓
+           Pedestrian Request?
+              ├── Yes → PEDESTRIAN_CROSSING
+              └── No
+                    ↓
+                SIDE_GREEN
+                    ↓
+          Side Road = GREEN, Main Road = RED
+                    ↓
+          Emergency Request?
+              ├── Yes → SIDE_YELLOW
+              └── No
+                    ↓
+          Timer Expired?
+              ├── No → Stay in SIDE_GREEN
+              └── Yes → SIDE_YELLOW
+                                ↓
+                        Side Road = YELLOW, Main Road = RED
+                                ↓
+                        Timer Expired?
+                                ↓
+                            ALL_RED_2, All Roads = RED
+                                ↓
+                       Emergency Request?
+                          ├── Yes → EMERGENCY
+                          └── No
+                                ↓
+                       Pedestrian Request?
+                          ├── Yes → PEDESTRIAN_CROSSING
+                          └── No
+                                ↓
+                            MAIN_GREEN
+
+PEDESTRIAN_CROSSING						        EMERGENCY
+  ↓									  ↓
+All Vehicle Signals = RED						Main Road = GREEN
+Pedestrian Crossing Enabled						All Other Signals = RED
+  ↓									 ↓
+Emergency Request?							Timer Expired?
+  ├── Yes → EMERGENCY						                            ├── No → Stay in EMERGENCY
+  └── No								                                └── Yes
+        ↓								      ↓
+Timer Expired?								Return to Safe Previous State
+  ├── No → Stay in PEDESTRIAN_CROSSING				                          ↓
+  └── Yes								                                Repeat Traffic Control Cycle
+        ↓
+Return to Previous Traffic Sequence
+—-----------------------------------------------------------------------------------------------------------------

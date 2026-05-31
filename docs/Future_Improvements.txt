@@ -1,0 +1,37 @@
+# FUTURE IMPROVEMENTS
+
+Possible future enhancements for the project:
+
+1. Adaptive Traffic Density Control
+
+   * Dynamic traffic timing using sensors
+
+2. Camera-Based Vehicle Detection
+
+   * Integration with computer vision systems
+
+3. Seven-Segment Display Interface
+
+   * Real-time countdown display
+
+4. UART or Bluetooth Monitoring
+
+   * Wireless status monitoring
+
+5. Emergency Vehicle Identification
+
+   * RFID or sensor-based emergency detection
+
+6. Pedestrian Countdown Signals
+
+   * Visual crossing timer indicators
+
+7. Low-Power FPGA Optimization
+
+   * Reduced switching activity
+
+8. Multi-Junction Traffic Coordination
+
+   * Distributed traffic management system
+
+=====================================================
